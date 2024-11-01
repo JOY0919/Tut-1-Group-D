@@ -3,18 +3,27 @@ function setup() {
     background(255);
   
   // Set the stroke color and weight for the yellow lines
-  stroke(225,225.0);
+  stroke(255, 255, 0);
   strokeWeight( 10 );
   
-  let y = 0;
+  let yPositions = [0, height];
   for (let i = 0; i < 5; i++){
-    line(0, y, width,y);
-    y += random(50,80);
+    yPositions.push(random(50,height - 50));
   }
+  yPositions.sort((a,b) => a-b);
+
+  for (let y of yPositions ){
+    line(0, y, width,y);
+  }
+
+  let xPositions = [0, width];
+  for (let j = 0; j < 5; j++){
+    xPositions.push(random(50,width - 30));
+  }
+  xPositions.sort((a,b) => a-b);
+
+  for (let x of xPositions ){
+      line(x, 0, x, height);
   
-  let x = 0;
-  for (let j =0; j < 8; j++) {
-    line(x, 0, x, height);
-    x +=random(30,60) ;
   }
 }
