@@ -4,7 +4,7 @@ function setup() {
   
   // Set the stroke color and weight for the yellow lines
   stroke(255, 255, 0);
-  strokeWeight( 10 );
+  strokeWeight( 15 );
   
   let yPositions = [0, height];
   for (let i = 0; i < 5; i++){
