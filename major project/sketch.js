@@ -45,7 +45,35 @@ fill('red');
 rect(280,280,70,90);
 
 
+//Random squares, representing objects that change over time
 
-
-
+randomRect();
 }
+
+
+function randomRect(){
+  let colors = ['red','grey','blue'];
+
+  for (let i=0; i< 5; i++) {
+    let x = random(0, 350);
+    let y = random(0, 350);
+    let rectSize = random(20,100);
+
+
+
+    let color = random(colors);
+    fill(color);
+    noStroke();
+    rect(x,y,rectSize, rectSize);
+
+
+  }
+}
+
+
+
+
+
+
+
+
