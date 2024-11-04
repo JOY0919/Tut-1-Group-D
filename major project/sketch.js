@@ -26,4 +26,26 @@ function setup() {
       line(x, 0, x, height);
   
   }
+
+
+//Zichen Zhang
+//Generate red, blue and gray squares that appear in different positions each time they refresh
+
+//Some fixed squares, representing objects（such as some buildings) that don't change
+fill('red');
+rect(30,60,50,80);
+
+fill('blue');
+rect(250,60,50,80);
+
+fill ('grey');
+rect (45,290,80,50);
+
+fill('red');
+rect(280,280,70,90);
+
+
+
+
+
 }
