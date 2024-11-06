@@ -1,7 +1,18 @@
 function setup() {
   createCanvas(400, 400);
-    background(255);
-  
+}
+    
+function draw() {
+  background(255);
+  noLoop()
+  drawRandomLines()
+  drawfixedRects();
+  randomRect();
+  drawColouredHorizontalRoad(220);
+  drawColouredVerticalRoad(220);
+}
+
+function drawRandomLines(){
   // Set the stroke color and weight for the yellow lines
   stroke(255, 255, 0);
   strokeWeight( 15 );
@@ -26,29 +37,26 @@ function setup() {
       line(x, 0, x, height);
   }
 
+}
+
+
 
 //Zichen Zhang
 //Generate red, blue and gray squares that appear in different positions each time they refresh
 //Some fixed squares, representing objects（such as some buildings) that don't change
 
-drawfixedRects();
-randomRect();
-drawColouredHorizontalRoad(220);
-drawColouredVerticalRoad(220);
-}
-
 function drawfixedRects(){
-fill('red');
-rect(30,60,50,80);
+  fill('red');
+  rect(30,60,50,80);
 
-fill('blue');
-rect(250,60,50,80);
+  fill('blue');
+  rect(250,60,50,80);
 
-fill ('grey');
-rect (45,290,80,50);
+  fill ('grey');
+  rect (45,290,80,50);
 
-fill('red');
-rect(280,280,70,90);
+  fill('red');
+  rect(280,280,70,90);
 }
 
 //Random rects, representing objects that change over time
@@ -69,47 +77,47 @@ function randomRect(){
     let x, y;
     let overlapping = true;
     
-//while loops are helpful for repeating statements while a condition is true. They're like if statements that repeat.
-//Loop through the locations until find one that doesn't overlap
-while (overlapping){
-  x = random(0, 330);
-  y = random(0, 330);
-  overlapping = false;
+    //while loops are helpful for repeating statements while a condition is true. They're like if statements that repeat.
+    //Loop through the locations until find one that doesn't overlap
+    while (overlapping){
+      x = random(0, 330);
+      y = random(0, 330);
+      overlapping = false;
 
-//Check to see if random rects overlaps the fixed rects
-  for (let rect of fixedRects){
-    let horizontalOverlap = false;
-    let verticalOverlap = false;
-  
-//Determine whether there is horizontal overlap
-if (x < rect.x + rect.w) {
-  if (x + rectSize > rect.x){
-    horizontalOverlap = true;
-  }
-}
-//Determine whether there is vertical overlap
-if (y < rect.y + rect.h){
-  if (y + rectSize > rect.y){
-    verticalOverlap = true;
-  }
-}
+      //Check to see if random rects overlaps the fixed rects
+      for (let rect of fixedRects){
+        let horizontalOverlap = false;
+        let verticalOverlap = false;
+      
+        //Determine whether there is horizontal overlap
+        if (x < rect.x + rect.w) {
+          if (x + rectSize > rect.x){
+            horizontalOverlap = true;
+          }
+        }
+        //Determine whether there is vertical overlap
+        if (y < rect.y + rect.h){
+          if (y + rectSize > rect.y){
+            verticalOverlap = true;
+          }
+        }
 
-//If both directions have overlapping, set overlapping to true
-if (horizontalOverlap){
-  if (verticalOverlap){
-    overlapping = true;
-    break;
-     }
+        //If both directions have overlapping, set overlapping to true
+        if (horizontalOverlap){
+          if (verticalOverlap){
+            overlapping = true;
+            break;
+          }
+        }
+      }
     }
-   }
-  }
 
     let color = random(colors);
     fill(color);
     noStroke();
     rect(x,y,rectSize, rectSize);
-   }
   }
+}
 
 // Xueying Wang
 // The function of drawing fixed yellow lines with three-color squares on it
