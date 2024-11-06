@@ -33,7 +33,8 @@ function setup() {
 
 drawfixedRects();
 randomRect();
-drawColouredHorizontalRoad(200);
+drawColouredHorizontalRoad(220);
+drawColouredVerticalRoad(220);
 }
 
 function drawfixedRects(){
@@ -118,6 +119,30 @@ function drawColouredHorizontalRoad(y){
   let colourChoice;
   for (let i = 0; i < boxNumbers; i ++){
     let x = i * boxSize;
+    if(i % 2 === 0){
+      colourChoice = 'yellow';
+    } else if (i % 6 == 1 || i % 6 == 5){
+      if(random(1) < 0.7){
+        colourChoice = 'yellow';
+      } else {
+        colourChoice = 'grey';
+      }
+    } else {
+      colourChoice = random(['red', 'blue']);
+    }
+
+    fill(colourChoice);
+    noStroke();
+    rect(x, y, boxSize, boxSize);
+  }
+}
+
+function drawColouredVerticalRoad(x){
+  let boxSize = 20;
+  let boxNumbers = height / boxSize;
+  let colourChoice;
+  for (let i = 0; i < boxNumbers; i ++){
+    let y = i * boxSize;
     if(i % 2 === 0){
       colourChoice = 'yellow';
     } else if (i % 6 == 1 || i % 6 == 5){
