@@ -19,7 +19,7 @@ function draw() {
 
 function drawRandomLines(){
   // Set the stroke color and weight for the yellow lines
-  stroke(255, 255, 0);
+  stroke(252, 224, 46);
   strokeWeight( 15 );
   
   let yPositions = [0, height];
@@ -51,23 +51,27 @@ function drawRandomLines(){
 //Some fixed squares, representing objects（such as some buildings) that don't change
 
 function drawfixedRects(){
-  fill('red');
+  fill(239,17,17); //red
   rect(30,60,50,80);
 
-  fill('blue');
+  fill(43,115,247); //blue
   rect(250,60,50,80);
 
-  fill ('grey');
+  fill (211,211,211); //gray
   rect (45,290,80,50);
 
-  fill('red');
+  fill(239,17,17); //red
   rect(280,280,70,90);
 }
 
 //Random rects, representing objects that change over time
 
 function randomRect(){
-  let colors = ['red','grey','blue'];
+  let colors = [
+    [239,17,17], //red
+    [43,115,247], //blue
+    [211,211,211] //gray
+  ];
 
   //Fixed the size and location of rects.
   let fixedRects = [ 
