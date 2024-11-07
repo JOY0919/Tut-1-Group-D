@@ -10,6 +10,9 @@ function draw() {
   randomRect();
   drawColouredHorizontalRoad(220);
   drawColouredVerticalRoad(220);
+  drawColouredVerticalRoad(140);
+  drawColouredHorizontalRoad(180);
+  drawColouredVerticalRoad(360);
 }
 
 function drawRandomLines(){
@@ -168,10 +171,4 @@ function drawColouredVerticalRoad(x){
     rect(x, y, boxSize, boxSize);
   }
 }
-
-
-
-
-
-
 
