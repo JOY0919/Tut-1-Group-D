@@ -133,15 +133,15 @@ function drawColouredHorizontalRoad(y){
   for (let i = 0; i < boxNumbers; i ++){
     let x = i * boxSize;
     if(i % 2 === 0){
-      colourChoice = 'yellow';
+      colourChoice = color(252, 224, 46); // yellow
     } else if (i % 6 == 1 || i % 6 == 5){
       if(random(1) < 0.7){
-        colourChoice = 'yellow';
+        colourChoice = color(252, 224, 46); // yellow
       } else {
-        colourChoice = 'grey';
+        colourChoice = color(211, 211, 211); // gray
       }
     } else {
-      colourChoice = random(['red', 'blue']);
+      colourChoice = random([color(239, 17, 17), color(43, 115, 247)]);
     }
 
     fill(colourChoice);
@@ -157,15 +157,15 @@ function drawColouredVerticalRoad(x){
   for (let i = 0; i < boxNumbers; i ++){
     let y = i * boxSize;
     if(i % 2 === 0){
-      colourChoice = 'yellow';
+      colourChoice = color(252, 224, 46); // yellow
     } else if (i % 6 == 1 || i % 6 == 5){
       if(random(1) < 0.7){
-        colourChoice = 'yellow';
+        colourChoice = color(252, 224, 46); // yellow
       } else {
-        colourChoice = 'grey';
+        colourChoice = color(211, 211, 211); // gray
       }
     } else {
-      colourChoice = random(['red', 'blue']);
+      colourChoice = random([color(239, 17, 17), color(43, 115, 247)]);
     }
 
     fill(colourChoice);
