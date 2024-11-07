@@ -10,11 +10,11 @@ function draw() {
   drawRandomLines()
   drawfixedRects();
   randomRect();
-  drawColouredHorizontalRoad(min(width, height) / 40 * 11);
-  drawColouredVerticalRoad(min(width, height) / 40 * 11);
-  drawColouredVerticalRoad(min(width, height) / 40 * 7);
-  drawColouredHorizontalRoad(min(width, height) / 40 * 7);
-  drawColouredVerticalRoad(min(width, height) / 40 * 17);
+  drawColouredHorizontalRoad(min(width, height) / 40 * 21);
+  drawColouredVerticalRoad(min(width, height) / 40 * 1);
+  drawColouredVerticalRoad(min(width, height) / 40 * 23);
+  drawColouredHorizontalRoad(min(width, height) / 40 * 15);
+  drawColouredVerticalRoad(min(width, height) / 40 * 13);
 }
 
 function drawRandomLines(){
