@@ -13,13 +13,15 @@ function draw() {
   drawColouredVerticalRoad(min(width, height) / 40 * 23);
   drawColouredHorizontalRoad(min(width, height) / 40 * 15);
   drawColouredVerticalRoad(min(width, height) / 40 * 13);
+  drawColouredHorizontalRoad(min(width, height) / 40 * 37);
 }
 
 function drawRandomLines(){
+  let size = min(windowWidth, windowHeight);
   // Set the stroke color and weight for the yellow lines
   stroke(252, 224, 46);
-  strokeWeight(15);
-  let size = min(windowWidth, windowHeight);
+  strokeWeight(size / 40);
+  
   let yPositions = [0, size];
   for (let i = 0; i < 5; i++){
     yPositions.push(random(50, size - 50));
@@ -50,14 +52,15 @@ function drawRandomLines(){
 
 function drawfixedRects(){
   let size = min(windowWidth, windowHeight)
+  strokeWeight(size / 40);
   fill(239,17,17); //red
-  rect(0.075 * size, 0.15 * size, 0.125 * size, 0.2 * size);
+  rect(0.037 * size, 0.186 * size, 0.125 * size, 0.2 * size);
 
   fill(43,115,247); //blue
   rect(0.625 * size, 0.15 * size, 0.125 * size, 0.2 * size);
 
   fill (211,211,211); //gray
-  rect (0.1125 * size, 0.725 * size, 0.2 * size, 0.125 * size);
+  rect (0.138 * size, 0.725 * size, 0.2 * size, 0.125 * size);
 
   fill(239,17,17); //red
   rect(0.7 * size, 0.7 * size, 0.175 * size, 0.225 * size);
@@ -75,9 +78,9 @@ function randomRect(){
 
   //Fixed the size and location of rects.
   let fixedRects = [ 
-    { x: 0.075 * size, y: 0.15 * size, w: 0.125 * size, h: 0.2 * size},
+    { x: 0.037 * size, y: 0.186 * size, w: 0.125 * size, h: 0.2 * size},
     { x: 0.625 * size, y: 0.15 * size, w: 0.125 * size, h: 0.2 * size},
-    { x: 0.1125 * size, y: 0.725 * size, w: 0.2 * size, h: 0.125 * size},
+    { x: 0.138 * size, y: 0.725 * size, w: 0.2 * size, h: 0.125 * size},
     { x: 0.7 * size, y: 0.7 * size, w: 0.175 * size, h: 0.225 * size},
   ];
 
