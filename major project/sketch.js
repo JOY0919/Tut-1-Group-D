@@ -11,8 +11,8 @@ function draw() {
   drawColouredHorizontalRoad(220);
   drawColouredVerticalRoad(220);
   drawColouredVerticalRoad(140);
-  drawColouredHorizontalRoad(180);
-  drawColouredVerticalRoad(360);
+  drawColouredHorizontalRoad(140);
+  drawColouredVerticalRoad(340);
 }
 
 function drawRandomLines(){
