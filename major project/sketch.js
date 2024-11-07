@@ -1,3 +1,5 @@
+//Ziyue Xu
+//Original yellow line background
 function setup() {
   createCanvas(windowWidth, windowHeight);
 }
@@ -22,12 +24,15 @@ function drawRandomLines(){
   stroke(252, 224, 46);
   strokeWeight(size / 40);
   
+
+  // Define the number of lines for both horizontal and vertical
   let yPositions = [0, size];
   for (let i = 0; i < 5; i++){
     yPositions.push(random(50, size - 50));
   }
   yPositions.sort((a,b) => a-b);
 
+  // Draw the horizontal lines
   for (let y of yPositions ){
     line(0, y, size, y);
   }
@@ -38,6 +43,8 @@ function drawRandomLines(){
   }
   xPositions.sort((a,b) => a-b);
 
+
+    // Draw the vertical lines
   for (let x of xPositions ){
       line(x, 0, x, size);
   }
