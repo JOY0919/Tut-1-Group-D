@@ -1,7 +1,5 @@
-
-
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(windowWidth, windowHeight);
 }
     
 function draw() {
@@ -20,26 +18,26 @@ function draw() {
 function drawRandomLines(){
   // Set the stroke color and weight for the yellow lines
   stroke(252, 224, 46);
-  strokeWeight( 15 );
-  
-  let yPositions = [0, height];
+  strokeWeight(15);
+  let size = min(windowWidth, windowHeight);
+  let yPositions = [0, size];
   for (let i = 0; i < 5; i++){
-    yPositions.push(random(50,height - 50));
+    yPositions.push(random(50, size - 50));
   }
   yPositions.sort((a,b) => a-b);
 
   for (let y of yPositions ){
-    line(0, y, width,y);
+    line(0, y, size, y);
   }
 
-  let xPositions = [0, width];
+  let xPositions = [0, size];
   for (let j = 0; j < 5; j++){
-    xPositions.push(random(50,width - 30));
+    xPositions.push(random(50, size - 30));
   }
   xPositions.sort((a,b) => a-b);
 
   for (let x of xPositions ){
-      line(x, 0, x, height);
+      line(x, 0, x, size);
   }
 
 }
@@ -51,22 +49,24 @@ function drawRandomLines(){
 //Some fixed squares, representing objects（such as some buildings) that don't change
 
 function drawfixedRects(){
+  let size = min(windowWidth, windowHeight)
   fill(239,17,17); //red
-  rect(30,60,50,80);
+  rect(0.075 * size, 0.15 * size, 0.125 * size, 0.2 * size);
 
   fill(43,115,247); //blue
-  rect(250,60,50,80);
+  rect(0.625 * size, 0.15 * size, 0.125 * size, 0.2 * size);
 
   fill (211,211,211); //gray
-  rect (45,290,80,50);
+  rect (0.1125 * size, 0.725 * size, 0.2 * size, 0.125 * size);
 
   fill(239,17,17); //red
-  rect(280,280,70,90);
+  rect(0.7 * size, 0.7 * size, 0.175 * size, 0.225 * size);
 }
 
 //Random rects, representing objects that change over time
 
 function randomRect(){
+  let size = min(windowWidth, windowHeight);
   let colors = [
     [239,17,17], //red
     [43,115,247], //blue
@@ -75,10 +75,10 @@ function randomRect(){
 
   //Fixed the size and location of rects.
   let fixedRects = [ 
-    { x:30, y:60, w:50, h:80},
-    { x:250, y:60, w:50, h:80},
-    { x:45, y:290, w:80, h:50},
-    { x:280, y:280, w:70, h:90},
+    { x: 0.075 * size, y: 0.15 * size, w: 0.125 * size, h: 0.2 * size},
+    { x: 0.625 * size, y: 0.15 * size, w: 0.125 * size, h: 0.2 * size},
+    { x: 0.1125 * size, y: 0.725 * size, w: 0.2 * size, h: 0.125 * size},
+    { x: 0.7 * size, y: 0.7 * size, w: 0.175 * size, h: 0.225 * size},
   ];
 
   for (let i=0; i< 5; i++) {
@@ -89,8 +89,8 @@ function randomRect(){
     //while loops are helpful for repeating statements while a condition is true. They're like if statements that repeat.
     //Loop through the locations until find one that doesn't overlap
     while (overlapping){
-      x = random(0, 330);
-      y = random(0, 330);
+      x = random(0, size - 70);
+      y = random(0, size - 70);
       overlapping = false;
 
       //Check to see if random rects overlaps the fixed rects
