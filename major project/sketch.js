@@ -1,3 +1,5 @@
+
+
 function setup() {
   createCanvas(400, 400);
 }
@@ -8,11 +10,11 @@ function draw() {
   drawRandomLines()
   drawfixedRects();
   randomRect();
-  drawColouredHorizontalRoad(220);
-  drawColouredVerticalRoad(220);
-  drawColouredVerticalRoad(140);
-  drawColouredHorizontalRoad(140);
-  drawColouredVerticalRoad(340);
+  drawColouredHorizontalRoad(min(width, height) / 40 * 11);
+  drawColouredVerticalRoad(min(width, height) / 40 * 11);
+  drawColouredVerticalRoad(min(width, height) / 40 * 7);
+  drawColouredHorizontalRoad(min(width, height) / 40 * 7);
+  drawColouredVerticalRoad(min(width, height) / 40 * 17);
 }
 
 function drawRandomLines(){
@@ -125,8 +127,8 @@ function randomRect(){
 // Xueying Wang
 // The function of drawing fixed yellow lines with three-color squares on it
 function drawColouredHorizontalRoad(y){
-  let boxSize = 20;
-  let boxNumbers = width / boxSize;
+  let boxSize = min(width, height) / 40;
+  let boxNumbers = min(width, height) / boxSize;
   let colourChoice;
   for (let i = 0; i < boxNumbers; i ++){
     let x = i * boxSize;
@@ -149,8 +151,8 @@ function drawColouredHorizontalRoad(y){
 }
 
 function drawColouredVerticalRoad(x){
-  let boxSize = 20;
-  let boxNumbers = height / boxSize;
+  let boxSize = min(width, height) / 40;
+  let boxNumbers = min(width, height) / boxSize;
   let colourChoice;
   for (let i = 0; i < boxNumbers; i ++){
     let y = i * boxSize;
@@ -172,3 +174,6 @@ function drawColouredVerticalRoad(x){
   }
 }
 
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+}
