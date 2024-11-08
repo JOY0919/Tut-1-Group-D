@@ -1,7 +1,6 @@
 //Ziyue Xu
 //Original yellow line background
 function setup() {
-<<<<<<< Updated upstream
   createCanvas(windowWidth, windowHeight);
 }
     
@@ -21,26 +20,15 @@ function draw() {
 
 function drawRandomLines(){
   let size = min(windowWidth, windowHeight);
-=======
-  createCanvas(1000, 1000);
-    background(255);
-  
->>>>>>> Stashed changes
   // Set the stroke color and weight for the yellow lines
   stroke(252, 224, 46);
   strokeWeight(size / 40);
   
-<<<<<<< Updated upstream
 
   // Define the number of lines for both horizontal and vertical
   let yPositions = [0, size];
   for (let i = 0; i < 5; i++){
     yPositions.push(random(50, size - 50));
-=======
-  let yPositions = [0, height];
-  for (let i = 0; i < 15; i++){
-    yPositions.push(random(50,height - 50));
->>>>>>> Stashed changes
   }
   yPositions.sort((a,b) => a-b);
 
@@ -49,15 +37,9 @@ function drawRandomLines(){
     line(0, y, size, y);
   }
 
-<<<<<<< Updated upstream
   let xPositions = [0, size];
   for (let j = 0; j < 5; j++){
     xPositions.push(random(50, size - 30));
-=======
-  let xPositions = [0, width];
-  for (let j = 0; j < 15; j++){
-    xPositions.push(random(50,width - 30));
->>>>>>> Stashed changes
   }
   xPositions.sort((a,b) => a-b);
 
